@@ -1,2 +1,4 @@
-# AlwaysNextServer
-App Engine Code for AlwaysNext.com
+appengine-skeleton
+=============================
+
+This is a generated application from the appengine-skeleton archetype.
