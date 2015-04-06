@@ -1,0 +1,20 @@
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="page-header" infinite-scroll>
+    <ul id="nav">
+      <li><span>{{name}}</span></li>
+      <li><span>Film</span></li>
+      <li><span>Music</span></li>
+      <li><span>Books</span></li>
+      <li><input ng-model="query"><img src="ui/images/search.png"></li>
+    </ul>
+  </div>
+  <div class="results-cards" card-locations >
+    <div class="" ng-repeat="card in cards | filter:query track by $index" on-last-repeat >
+      <div ng-if=" card.type == 'music' " card url="ui/partials/cards/templates/musicCard.html">
+      </div>
+      <div ng-if=" card.type == 'film' " card url="ui/partials/cards/templates/filmCard.html">
+      </div>
+    </div>
+  </div>

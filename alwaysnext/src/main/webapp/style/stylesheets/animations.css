@@ -1,0 +1,40 @@
+/*
+ * animations
+ */
+/* line 6, ../sass/animations.scss */
+.overlay.ng-enter {
+  -webkit-transition: 0.2s ease-out all;
+  -moz-transition: 0.2s ease-out all;
+  -o-transition: 0.2s ease-out all;
+  transition: 0.2s ease-out all;
+}
+
+/* line 13, ../sass/animations.scss */
+.overlay.ng-enter {
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 18, ../sass/animations.scss */
+.overlay.ng-enter.ng-enter-active {
+  height: 245px;
+}
+
+/* line 22, ../sass/animations.scss */
+.overlay.ng-leave {
+  -webkit-transition: 0.1s ease-out all;
+  -moz-transition: 0.1s ease-out all;
+  -o-transition: 0.1s ease-out all;
+  transition: 0.1s ease-out all;
+}
+
+/* line 29, ../sass/animations.scss */
+.overlay.ng-leave {
+  height: 245px;
+  overflow: hidden;
+}
+
+/* line 34, ../sass/animations.scss */
+.overlay.ng-leave.ng-leave-active {
+  height: 0;
+}
