@@ -3,17 +3,16 @@ package com.alwaysnext;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.response.NotFoundException;
-import com.google.appengine.api.users.User;
 
 import java.util.ArrayList;
 
 import javax.inject.Named;
 
 /**
- * Defines v1 of a helloworld API, which provides simple "greeting" methods.
+ * Defines v1 of the alwaysnext API, which provides simple "greeting" methods.
  */
 @Api(
-    name = "helloworld",
+    name = "alwaysnext",
     version = "v1",
     scopes = {Constants.EMAIL_SCOPE},
     clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID},
@@ -48,12 +47,6 @@ public class Greetings {
       responseBuilder.append(greeting.getMessage());
     }
     response.setMessage(responseBuilder.toString());
-    return response;
-  }
-
-  @ApiMethod(name = "greetings.authed", path = "hellogreeting/authed")
-  public HelloGreeting authedGreeting(User user) {
-    HelloGreeting response = new HelloGreeting("hello " + user.getEmail());
     return response;
   }
 }

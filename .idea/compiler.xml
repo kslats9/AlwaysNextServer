@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="alwaysnext" />
         <module name="AlwaysNextServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="alwaysnext" target="1.7" />
       <module name="AlwaysNextServer" target="1.7" />
     </bytecodeTargetLevel>
   </component>
