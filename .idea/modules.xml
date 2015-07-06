@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AlwaysNextServer.iml" filepath="$PROJECT_DIR$/AlwaysNextServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/alwaysnext/alwaysnext.iml" filepath="$PROJECT_DIR$/alwaysnext/alwaysnext.iml" />
     </modules>
   </component>
 </project>
-
