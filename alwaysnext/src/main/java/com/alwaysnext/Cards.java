@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.inject.Named;
 
 /**
- * Defines v1 of the alwaysnext API, which provides simple "greeting" methods.
+ * Defines v1 of the alwaysnext API, which provides simple methods on cards.
  */
 @Api(
     name = "alwaysnext",
@@ -18,35 +18,35 @@ import javax.inject.Named;
     clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID},
     audiences = {Constants.ANDROID_AUDIENCE}
 )
-public class Greetings {
+public class Cards {
 
-  public static ArrayList<HelloGreeting> greetings = new ArrayList<HelloGreeting>();
+  public static ArrayList<Card> cards = new ArrayList<Card>();
 
   static {
-    greetings.add(new HelloGreeting("hello world!"));
-    greetings.add(new HelloGreeting("goodbye world!"));
+    cards.add(new Card("hello world!", "film"));
+    cards.add(new Card("goodbye world!", "film"));
   }
 
-  public HelloGreeting getGreeting(@Named("id") Integer id) throws NotFoundException {
+  public Card getGreeting(@Named("id") Integer id) throws NotFoundException {
     try {
-      return greetings.get(id);
+      return cards.get(id);
     } catch (IndexOutOfBoundsException e) {
       throw new NotFoundException("Greeting not found with an index: " + id);
     }
   }
 
-  public ArrayList<HelloGreeting> listGreeting() {
-    return greetings;
+  public ArrayList<Card> listGreeting() {
+    return cards;
   }
 
-  @ApiMethod(name = "greetings.multiply", httpMethod = "post")
-  public HelloGreeting insertGreeting(@Named("times") Integer times, HelloGreeting greeting) {
-    HelloGreeting response = new HelloGreeting();
+  @ApiMethod(name = "cards.multiply", httpMethod = "post")
+  public Card insertGreeting(@Named("times") Integer times, Card greeting) {
+    Card response = new Card();
     StringBuilder responseBuilder = new StringBuilder();
     for (int i = 0; i < times; i++) {
-      responseBuilder.append(greeting.getMessage());
+      responseBuilder.append(greeting.getImageURL());
     }
-    response.setMessage(responseBuilder.toString());
+    response.setImageURL(responseBuilder.toString());
     return response;
   }
 }
