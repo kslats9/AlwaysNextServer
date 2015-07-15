@@ -23,8 +23,16 @@ public class Cards {
   public static ArrayList<Card> cards = new ArrayList<Card>();
 
   static {
-    cards.add(new Card("hello world!", "film"));
-    cards.add(new Card("goodbye world!", "film"));
+    cards.add(new FilmCard("http://ia.media-imdb.com/images/M/MV5BMTkxNzI3ODI4Nl5BMl5BanBnXkFtZTgwMjkwMjY4MjE@._V1_SX640_SY720_.jpg",
+                            1436762722,"Drama","American Sniper","The Most Lethal Sniper in U.S. History", "2:14", "R",
+                            "Rotten Tomatoes", 71, "Bradley Cooper, Sienna Miller, Clint Eastwood",
+            "Powered by Clint Eastwood's sure-handed direction and a gripping central performance from Bradley Cooper, American Sniper delivers a tense, vivid tribute to its real-life subject."));
+
+      cards.add(new FilmCard("http://ia.media-imdb.com/images/M/MV5BMTkxNzI3ODI4Nl5BMl5BanBnXkFtZTgwMjkwMjY4MjE@._V1_SX640_SY720_.jpg",
+              1436762722,"Drama","American Sniper","The Most Lethal Sniper in U.S. History", "2:14", "R",
+              "Rotten Tomatoes", 71, "Bradley Cooper, Sienna Miller, Clint Eastwood",
+              "Powered by Clint Eastwood's sure-handed direction and a gripping central performance from Bradley Cooper, American Sniper delivers a tense, vivid tribute to its real-life subject."));
+
   }
 
   public Card getGreeting(@Named("id") Integer id) throws NotFoundException {
@@ -39,14 +47,4 @@ public class Cards {
     return cards;
   }
 
-  @ApiMethod(name = "cards.multiply", httpMethod = "post")
-  public Card insertGreeting(@Named("times") Integer times, Card greeting) {
-    Card response = new Card();
-    StringBuilder responseBuilder = new StringBuilder();
-    for (int i = 0; i < times; i++) {
-      responseBuilder.append(greeting.getImageURL());
-    }
-    response.setImageURL(responseBuilder.toString());
-    return response;
-  }
 }
